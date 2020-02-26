@@ -1,8 +1,10 @@
 import { NUMBERS, NATURAL_POSTFIX, INTEGER_PREFIX } from "./constants";
 
 export function naturalToWords(number) {
-  if (number <= -1) {
-    return "minus " + naturalToWords(-1 * number);
+  if (isNaN(number)) {
+    throw new Error("Parameter is not a number!");
+  } else if (number <= -1) {
+    throw new Error("Natural numbers are always positive");
   }
 
   for (let exp = 0; exp < 6; exp++) {
@@ -16,12 +18,14 @@ export function naturalToWords(number) {
       condition = number < +("1e" + 3 * (exp - 1)) ? true : false;
     } else {
       exp = 6;
-      return " - OUT OF RANGE - ";
+      throw new RangeError("Parameter is not on range 0...999999999");
     }
 
     if (condition) {
       let floor = Math.floor(number / div);
       let module = number % div;
+
+      console.log(number, floor, div, exp, NATURAL_POSTFIX[exp - 1]);
 
       if (NUMBERS[number]) {
         return NUMBERS[number];
@@ -29,13 +33,16 @@ export function naturalToWords(number) {
 
       if (NUMBERS[floor * div]) {
         return (
-          NUMBERS[floor * div] + " " + NATURAL_POSTFIX[exp] + NUMBERS[module]
+          NUMBERS[floor * div] +
+          " " +
+          NATURAL_POSTFIX[exp - 1] +
+          NUMBERS[module]
         );
       }
 
       return (
         naturalToWords(floor) +
-        NATURAL_POSTFIX[exp] +
+        NATURAL_POSTFIX[exp - 1] +
         (module ? " " + naturalToWords(module) : "")
       );
     }

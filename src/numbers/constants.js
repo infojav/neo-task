@@ -33,12 +33,12 @@ export const NUMBERS = {
 };
 
 export const NATURAL_POSTFIX = {
+  0: "",
   1: "",
-  1e1: "",
-  1e2: "hundred",
-  1e3: "thousand",
-  1e6: "million",
-  1e9: "billion"
+  2: "hundred",
+  3: "thousand",
+  6: "million",
+  9: "billion"
 };
 
 export const INTEGER_PREFIX = {
