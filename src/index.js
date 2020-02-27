@@ -1,6 +1,7 @@
 // import { naturalToWords } from "./numbers/convertToWords";
 
-import "./__tests__/convertToWords.test";
+import "./currency/amountToWords.test";
+// import "./numbers/convertToWords.test";
 
 import "./styles.css";
 

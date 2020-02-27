@@ -1,10 +1,16 @@
-import { NUMBERS, NATURAL_POSTFIX, INTEGER_PREFIX } from "./constants";
+import {
+  NUMBERS,
+  NATURAL_POSTFIX,
+  INTEGER_PREFIX,
+  MAX_VALUE
+} from "./constants";
 
 export function naturalToWords(number) {
+  // Check is not a fraccion.
   if (isNaN(number)) {
     throw new Error("Parameter is not a number!");
-  } else if (number <= -1 || number > 1e12 - 1) {
-    throw new RangeError("Parameter is not on range 0...1e12 - 1");
+  } else if (number <= -1 || number > MAX_VALUE) {
+    throw new RangeError(`Parameter is not on range 0...${MAX_VALUE}`);
   }
 
   if (NUMBERS[number]) {
@@ -12,7 +18,9 @@ export function naturalToWords(number) {
   }
 
   let exp =
-    number >= 1e9
+    number >= 1e12
+      ? 1e12
+      : 0 || number >= 1e9
       ? 1e9
       : 0 || number >= 1e6
       ? 1e6

@@ -34,9 +34,12 @@ export const NATURAL_POSTFIX = {
   1e2: " hundred",
   1e3: " thousand",
   1e6: " million",
-  1e9: " billion"
+  1e9: " billion",
+  1e12: " trillion"
 };
 
 export const INTEGER_PREFIX = {
   negativeValue: "minus"
 };
+
+export const MAX_VALUE = 1e15 - 1;
