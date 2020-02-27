@@ -9,7 +9,8 @@ test("Convert a natural number in words", () => {
   // assert(throwError(naturalToWords, "e"), "'e' trigger an Error, not a number");
   // assert("zero" === naturalToWords(0), "0 is 'zero'");
   // assert("twenty three" === naturalToWords(23), "23 is 'twenty three'");
-  assert("one hundred one" === naturalToWords(101), "101 is 'one hundred one'");
+  // assert("one hundred one" === naturalToWords(101), "101 is 'one hundred one'");
 });
 
-console.log(naturalToWords(190));
+// console.log(naturalToWords(190));
+console.log(naturalToWords(1999));

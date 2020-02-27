@@ -3,50 +3,49 @@ import { NUMBERS, NATURAL_POSTFIX, INTEGER_PREFIX } from "./constants";
 export function naturalToWords(number) {
   if (isNaN(number)) {
     throw new Error("Parameter is not a number!");
-  } else if (number <= -1) {
-    throw new Error("Natural numbers are always positive");
+  } else if (number <= -1 || number > 999999999) {
+    throw new RangeError("Parameter is not on range 0...999999999");
   }
 
-  for (let exp = 0; exp < 6; exp++) {
-    let div = +("1e" + exp);
-    let condition = false;
+  let exp = 0;
+  let div = 1;
 
-    if (exp < 3) {
-      condition = number < +(div * 10) ? true : false;
-    } else if (exp < 10) {
-      div = +("1000e" + Math.floor(exp / 3));
-      condition = number < +("1e" + 3 * (exp - 1)) ? true : false;
-    } else {
-      exp = 6;
-      throw new RangeError("Parameter is not on range 0...999999999");
-    }
-
-    if (condition) {
-      let floor = Math.floor(number / div);
-      let module = number % div;
-
-      console.log(number, floor, div, exp, NATURAL_POSTFIX[exp - 1]);
-
-      if (NUMBERS[number]) {
-        return NUMBERS[number];
-      }
-
-      if (NUMBERS[floor * div]) {
-        return (
-          NUMBERS[floor * div] +
-          " " +
-          NATURAL_POSTFIX[exp - 1] +
-          NUMBERS[module]
-        );
-      }
-
-      return (
-        naturalToWords(floor) +
-        NATURAL_POSTFIX[exp - 1] +
-        (module ? " " + naturalToWords(module) : "")
-      );
-    }
+  while (number && number > +(div * 10)) {
+    exp += exp < 3 ? 1 : 3;
+    div = +("1e" + exp);
+    console.log(`number: ${number}, exp: ${exp}, div: ${div}`);
   }
+
+  let floor = Math.floor(number / div);
+  let module = number % div;
+
+  console.log(
+    `number: ${number}, module: ${module}, floor: ${floor}, floor*div: ${floor *
+      div}`
+  );
+
+  if (NUMBERS[floor * div]) {
+    console.log("here 1");
+    return (
+      NUMBERS[floor * div] +
+      " " +
+      NATURAL_POSTFIX[exp - 1] +
+      naturalToWords(module)
+    );
+  }
+
+  console.log("here 2");
+
+  if (NUMBERS[number]) {
+    return NUMBERS[number];
+  }
+
+  return (
+    naturalToWords(floor) +
+    " " +
+    NATURAL_POSTFIX[exp] +
+    (module ? " " + naturalToWords(module) : "")
+  );
 }
 
 export function integerToWords(number) {
