@@ -26,19 +26,15 @@ export const NUMBERS = {
   60: "sixty",
   70: "seventy",
   80: "eighty",
-  90: "ninety",
-  100: "one hundred",
-  1000: "one thousand",
-  1000000: "one million"
+  90: "ninety"
 };
 
 export const NATURAL_POSTFIX = {
-  0: "",
-  1: "",
-  2: "hundred",
-  3: "thousand",
-  6: "million",
-  9: "billion"
+  1e1: "",
+  1e2: " hundred",
+  1e3: " thousand",
+  1e6: " million",
+  1e9: " billion"
 };
 
 export const INTEGER_PREFIX = {
