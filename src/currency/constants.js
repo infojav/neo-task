@@ -1,4 +1,4 @@
-export const MIN_AMOUNT = -234343;
+export const MIN_AMOUNT = 0;
 export const MAX_AMOUNT = 1e6 - 1;
 
 export const CURRENCIES = {
@@ -10,3 +10,4 @@ export const CURRENCIES = {
 
 export const CENTS = ["cent", "cents"];
 export const DEFAULT_CURRENCY = CURRENCIES["euro"];
+export const CONJUNCTION = " and ";

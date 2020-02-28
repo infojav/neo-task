@@ -1,5 +1,11 @@
 import { integerToWords } from "../numbers/convertToWords";
-import { MIN_AMOUNT, MAX_AMOUNT, DEFAULT_CURRENCY, CENTS } from "./constants";
+import {
+  MIN_AMOUNT,
+  MAX_AMOUNT,
+  DEFAULT_CURRENCY,
+  CENTS,
+  CONJUNCTION
+} from "./constants";
 
 export const amountToWords = amount => {
   if (isNaN(amount)) {
@@ -23,7 +29,7 @@ export const amountToWords = amount => {
     " " +
     (fractionPart === 1 ? CENTS[0] : CENTS[1]);
 
-  let wordsAmount = wordsIntPart + " and " + wordsFracPart;
+  let wordsAmount = wordsIntPart + CONJUNCTION + wordsFracPart;
 
   return wordsAmount.charAt(0).toUpperCase() + wordsAmount.slice(1);
 };
