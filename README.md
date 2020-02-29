@@ -1,6 +1,7 @@
-#Check writer#
+# Check writer
 
-##Description##
+## Description
+
 Given a Euro amount between 0 and 999,999.00 the program should output a worded
 represantation of an Euro amount on a check.
 
