@@ -7,16 +7,44 @@
 
   <body>
     <!-- <div id="app"></div> -->
-    <nav class="header">
-      <ul class="menu">
-        <li><a class="check-writer" href="">Check writer</a></li>
-        <li><a class="tests" href="">Tests</a></li>
-      </ul>
-    </nav>
-    <ul id="results"></ul>
+    <div class="header"><h1>Check Writter</h1></div>
+    <div class="convertion-panel">
+      <label for="amount">Amount:</label>
+      <input
+        type="amount"
+        id="amount"
+        placeholder="Enter the amount to convert"
+        name="amount"
+      />
+      <button type="button" id="buttonWrite">
+        Write in Euros
+      </button>
+    </div>
+    <!-- Test -->
+    <div class="test-panel">
+      <label> <input type="checkbox" name="show-test" />Show tests</label>
+      <ul id="test-results"></ul>
+      <!-- End tests -->
+    </div>
+
+    <div class="footer">
+      by
+      <a href="https://www.linkedin.com/in/infojav/" target="_blank"
+        >Javier Perea</a
+      >
+    </div>
+
     <script src="src/index.js"></script>
     <script>
-      window.onload = () => {};
+      // function handleWriteOnEuros() {
+      //   var amountInput = document.getElementById("amount");
+      //   console.log(amountToWords(24));
+      //   return false;
+      // }
+      window.onload = () => {
+        // var convertButton = document.getElementById("buttonWrite");
+        // convertButton.addEventListener("click", handleWriteOnEuros);
+      };
     </script>
   </body>
 </html>

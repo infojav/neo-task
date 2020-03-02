@@ -1,2 +1,22 @@
-#results li.pass {color: green;}
-#results li.fail {color: red;}
+#test-results > li {
+  font-weight: bold;
+  padding-bottom: 1.7em;
+}
+
+ul.asserts {
+  padding-top: 0.3em;
+  padding-left: 0.7em;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+ul.asserts > li {
+  font-weight: normal;
+}
+
+#test-results li.pass {
+  color: green;
+}
+#test-results li.fail {
+  color: red;
+}

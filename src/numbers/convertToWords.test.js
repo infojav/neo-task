@@ -1,5 +1,5 @@
 import { naturalToWords, integerToWords } from "../numbers/convertToWords";
-import { test, assert, throwError } from "../utils/tests";
+import { assert, throwError } from "../utils/tests";
 
 const AMOUNT = {
   "0": "zero",
@@ -41,5 +41,5 @@ export const testIntegerToWords = () => {
 };
 
 // Run test
-test("Convert a natural number in words", testNaturalToWords);
-test("Convert an integer number in words", testIntegerToWords);
+// test("Convert a natural number in words", testNaturalToWords);
+// test("Convert an integer number in words", testIntegerToWords);

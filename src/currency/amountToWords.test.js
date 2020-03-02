@@ -1,5 +1,5 @@
 import { amountToWords } from "./amountToWords";
-import { test, assert, throwError } from "../utils/tests";
+import { assert, throwError } from "../utils/tests";
 
 // Amount euros in english
 const AMOUNT = {
@@ -39,4 +39,4 @@ export const testWriteAmount = () => {
 };
 
 // Run test
-test("Write amount of Money", testWriteAmount);
+// test("Write amount of Money", testWriteAmount);

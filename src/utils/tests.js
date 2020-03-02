@@ -12,8 +12,9 @@ export const assert = (value, desc) => {
   return li;
 };
 export const test = (name, fn) => {
-  results = document.getElementById("results");
+  results = document.getElementById("test-results");
   results = assert(true, name).appendChild(document.createElement("ul"));
+  results.className = "asserts";
   fn();
 };
 
