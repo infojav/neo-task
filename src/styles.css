@@ -68,27 +68,37 @@ h1 {
   padding: 10px;
   background-color: #fff;
   border: 1px solid #ddd;
+  font-size: 1em;
 }
 
 .convertion-panel button {
   padding: 10px 20px;
-  background-color: rgb(63, 63, 63);
-  border: 1px solid #ddd;
+  background-color: rgb(19, 19, 19);
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
 
 .convertion-panel button:hover {
-  background-color: black;
+  background-color: rgb(54, 54, 54);
 }
 
-@media (max-width: 400px) {
-  .form-inline input {
+.amount-text {
+  min-width: 300px;
+}
+
+.amount-text > h3#amount-text {
+  padding: 10px 20px;
+  min-width: 300px;
+}
+
+@media (max-width: 600px) {
+  .convertion-panel input {
     margin: 10px 0;
   }
 
-  .form-inline {
+  .convertion-panel {
+    margin-right: 10px;
     flex-direction: column;
     align-items: stretch;
   }

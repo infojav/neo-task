@@ -18,7 +18,7 @@ export const amountToWords = amount => {
 
   let sign = Math.sign(amount);
   let integerPart = sign !== -1 ? Math.floor(amount) : Math.ceil(amount) * -1;
-  let fractionPart = sign * amount * 100 - integerPart * 100;
+  let fractionPart = Math.trunc(sign * amount * 100 - integerPart * 100);
 
   let wordsIntPart =
     integerToWords(sign * integerPart) +
