@@ -4,16 +4,18 @@ import {
   MAX_AMOUNT,
   DEFAULT_CURRENCY,
   CENTS,
-  CONJUNCTION
+  CONJUNCTION,
+  VALID_FORMAT
 } from "./constants";
-
 export const amountToWords = amount => {
   if (isNaN(amount)) {
     throw new Error("Parameter is not a number!");
   } else if (amount < MIN_AMOUNT || amount > MAX_AMOUNT) {
-    throw new RangeError(
-      `Parameter is not on range ${MIN_AMOUNT}...${MAX_AMOUNT}`
-    );
+    throw new Error(`Parameter is not on range ${MIN_AMOUNT}...${MAX_AMOUNT}`);
+  } else if (
+    !VALID_FORMAT.reduce((acc, exp) => acc || amount.match(exp), false)
+  ) {
+    throw new Error(`Number needs follow the format "######.##".`);
   }
 
   let sign = Math.sign(amount);

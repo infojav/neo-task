@@ -32,17 +32,17 @@ body {
 h1 {
   color: white;
   font-size: 2em;
-  padding: 0.3em;
+  padding: 0.6em;
 }
 
 .convertion-panel {
   padding-top: 2.7em;
-  padding-left: 0.7em;
+  padding-left: 1.3em;
 }
 
 .test-panel {
   padding-top: 2.7em;
-  padding-left: 0.7em;
+  padding-left: 1.3em;
 }
 
 .test-panel > h2 {
@@ -73,21 +73,27 @@ h1 {
 
 .convertion-panel button {
   padding: 10px 20px;
-  background-color: rgb(19, 19, 19);
+  background-color: #131313;
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
 
 .convertion-panel button:hover {
-  background-color: rgb(54, 54, 54);
+  background-color: #363636;
 }
 
-.amount-text {
+.amount-text,
+.amount-error {
   min-width: 300px;
 }
 
-.amount-text > h3#amount-text {
+.amount-error {
+  color: #ff000065;
+}
+
+.amount-text > h3#amount-text,
+h3#amount-error {
   padding: 10px 20px;
   min-width: 300px;
 }

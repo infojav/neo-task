@@ -8,6 +8,12 @@ export const CURRENCIES = {
   pound: ["Pound", "Pounds"]
 };
 
+export const VALID_FORMAT = [
+  "^0$",
+  "^0\\.[0-9]{1,2}$",
+  "^[1-9][0-9]{0,5}$",
+  "^[1-9][0-9]{0,5}\\.[0-9]{1,2}$"
+];
 export const CENTS = ["cent", "cents"];
 export const DEFAULT_CURRENCY = CURRENCIES["euro"];
 export const CONJUNCTION = " and ";

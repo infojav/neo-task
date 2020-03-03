@@ -18,15 +18,15 @@ import "./styles.css";
 function handleWriteOnEuros() {
   let amountInput = document.getElementById("amount");
   let amountTextElement = document.getElementById("amount-text");
-  let amountText = "";
-  try {
-    amountText = amountToWords(amountInput.value);
-  } catch (e) {
-    amountText = e.toString();
-    console.log(e);
-  }
 
-  amountTextElement.textContent = amountText;
+  amountTextElement.style.color = "";
+
+  try {
+    amountTextElement.textContent = amountToWords(amountInput.value);
+  } catch (e) {
+    amountTextElement.style.color = "red";
+    amountTextElement.textContent = e.toString();
+  }
   return false;
 }
 
