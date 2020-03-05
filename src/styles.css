@@ -98,6 +98,20 @@ h3#amount-error {
   min-width: 300px;
 }
 
+input[name="show-test"] {
+  color: #ccc;
+  margin: 0 0.7em;
+}
+
+ul#test-results {
+  margin: 1.5em 0;
+  visibility: hidden;
+}
+
+input[name="show-test"]:checked + ul#test-results {
+  visibility: visible;
+}
+
 @media (max-width: 600px) {
   .convertion-panel input {
     margin: 10px 0;

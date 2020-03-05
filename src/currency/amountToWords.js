@@ -13,7 +13,10 @@ export const amountToWords = amount => {
   } else if (amount < MIN_AMOUNT || amount > MAX_AMOUNT) {
     throw new Error(`Parameter is not on range ${MIN_AMOUNT}...${MAX_AMOUNT}`);
   } else if (
-    !VALID_FORMAT.reduce((acc, exp) => acc || amount.match(exp), false)
+    !VALID_FORMAT.reduce(
+      (acc, exp) => acc || amount.toString().match(exp),
+      false
+    )
   ) {
     throw new Error(`Number needs follow the format "######.##".`);
   }

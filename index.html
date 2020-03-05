@@ -6,36 +6,38 @@
   </head>
 
   <body>
-    <!-- <div id="app"></div> -->
-    <div class="header"><h1>Check Writter</h1></div>
-    <div class="convertion-panel">
-      <label for="amount">Amount:</label>
-      <input
-        type="amount"
-        id="amount"
-        placeholder="Enter the amount to convert"
-        name="amount"
-      />
-      <button type="button" id="button-write">
-        Write in Euros
-      </button>
-    </div>
-    <div class="amount-text">
-      <h3 id="amount-text"></h3>
-    </div>
+    <div id="app">
+      <div class="header"><h1>Check Writter</h1></div>
+      <div class="convertion-panel">
+        <label for="amount">Amount:</label>
+        <input
+          type="amount"
+          id="amount"
+          placeholder="Enter the amount to convert"
+          name="amount"
+        />
+        <button type="button" id="button-write">
+          Write in Euros
+        </button>
+      </div>
+      <div class="amount-text">
+        <h3 id="amount-text"></h3>
+      </div>
 
-    <!-- Test -->
-    <div class="test-panel">
-      <label> <input type="checkbox" name="show-test" />Show tests</label>
-      <ul id="test-results"></ul>
-      <!-- End tests -->
-    </div>
+      <!-- Test -->
+      <div class="test-panel">
+        <label for="show-test">Show tests</label>
+        <input type="checkbox" name="show-test" />
+        <ul id="test-results"></ul>
+        <!-- End tests -->
+      </div>
 
-    <div class="footer">
-      by
-      <a href="https://www.linkedin.com/in/infojav/" target="_blank"
-        >Javier Perea</a
-      >
+      <div class="footer">
+        by
+        <a href="https://www.linkedin.com/in/infojav/" target="_blank"
+          >Javier Perea</a
+        >
+      </div>
     </div>
 
     <script src="src/index.js"></script>
