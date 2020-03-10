@@ -15,27 +15,38 @@ const AMOUNT = {
 export const testWriteAmount = () => {
   assert(
     throwError(amountToWords, -1),
-    "-1 trigger an Error, number not natural."
+    "amountToWords(-1) should trigger an Error, number not natural."
   );
-  assert(throwError(amountToWords, "e"), "'e' trigger an Error, not a number");
+  assert(
+    throwError(amountToWords, "e"),
+    "amountToWords('e') should trigger an Error, not a number"
+  );
   assert(
     AMOUNT[25001] ===
       (amountToWords(25001) &&
         amountToWords(25001.0) &&
-        amountToWords(+"25001.00")),
-    `25001, 25001.0 and 25001.00 are "${AMOUNT["25001"]}"`
+        amountToWords(25001.0)),
+    `amountToWords(25001), amountToWords(25001.0) and amountToWords(25001.00) should return "${
+      AMOUNT["25001"]
+    }"`
   );
 
   assert(
     AMOUNT["112.1"] === amountToWords(112.1),
-    `112.10 is "${AMOUNT["112.1"]}"`
+    `amountToWords(112.1) should return "${AMOUNT["112.1"]}"`
   );
   assert(
     AMOUNT["874327.9"] === amountToWords(874327.9),
-    `874327.9 is "${AMOUNT["874327.9"]}"`
+    `amountToWords(874327.9) should return "${AMOUNT["874327.9"]}"`
   );
-  assert(AMOUNT["978"] === amountToWords(978), `978 is "${AMOUNT["978"]}"`);
-  assert(AMOUNT["1.01"] === amountToWords(1.01), `1.01 is "${AMOUNT["1.01"]}"`);
+  assert(
+    AMOUNT["978"] === amountToWords(978),
+    `amountToWords(978) should return "${AMOUNT["978"]}"`
+  );
+  assert(
+    AMOUNT["1.01"] === amountToWords(1.01),
+    `amountToWords(1.01) should return "${AMOUNT["1.01"]}"`
+  );
 };
 
 // Run test

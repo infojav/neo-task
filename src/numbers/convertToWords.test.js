@@ -16,27 +16,51 @@ const AMOUNT = {
 export const testNaturalToWords = () => {
   assert(
     throwError(naturalToWords, -1),
-    "-1 trigger an Error, number not natural."
+    "naturalToWords(-1) should trigger an Error, number not natural."
   );
-  assert(throwError(naturalToWords, "e"), "'e' trigger an Error, not a number");
-  assert(AMOUNT["0"] === naturalToWords(0), `0 is "${AMOUNT["0"]}"`);
-  assert(AMOUNT["23"] === naturalToWords(23), `23 is "${AMOUNT["23"]}"`);
-  assert(AMOUNT["101"] === naturalToWords(101), `101 is "${AMOUNT["101"]}"`);
+  assert(
+    throwError(naturalToWords, "e"),
+    "naturalToWords('e') should trigger an Error, not a number"
+  );
+  assert(
+    AMOUNT["0"] === naturalToWords(0),
+    `naturalToWords(0) should return "${AMOUNT["0"]}"`
+  );
+  assert(
+    AMOUNT["23"] === naturalToWords(23),
+    `naturalToWords(23) should return "${AMOUNT["23"]}"`
+  );
+  assert(
+    AMOUNT["101"] === naturalToWords(101),
+    `naturalToWords(101) should return "${AMOUNT["101"]}"`
+  );
   assert(
     AMOUNT["1e9+1"] === naturalToWords(1e9 + 1),
-    `1e9+1 is "${AMOUNT["1e9+1"]}"`
+    `naturalToWords(1e9 + 1) should return "${AMOUNT["1e9+1"]}"`
   );
 };
 
 // "Convert an integer number in words"
 export const testIntegerToWords = () => {
-  assert(AMOUNT["-1"] === integerToWords(-1), `-1 is "${AMOUNT["0"]}"`);
-  assert(throwError(integerToWords, "e"), `'e' trigger an Error, not a number`);
-  assert(AMOUNT["0"] === integerToWords(0), `0 is "${AMOUNT["0"]}"`);
-  assert(AMOUNT["-23"] === integerToWords(-23), `23 is "${AMOUNT["-23"]}"`);
+  assert(
+    AMOUNT["-1"] === integerToWords(-1),
+    `integerToWords(-1) should return "${AMOUNT["0"]}"`
+  );
+  assert(
+    throwError(integerToWords, "e"),
+    `integerToWords('e') should trigger an Error, not a number`
+  );
+  assert(
+    AMOUNT["0"] === integerToWords(0),
+    `integerToWords(0) should return "${AMOUNT["0"]}"`
+  );
+  assert(
+    AMOUNT["-23"] === integerToWords(-23),
+    `integerToWords(-23) should return "${AMOUNT["-23"]}"`
+  );
   assert(
     AMOUNT["-1e9-1"] === integerToWords(-1e9 - 1),
-    `-1e9-1 is "${AMOUNT["-1e9-1"]}"`
+    `integerToWords(-1e9 - 1) should return "${AMOUNT["-1e9-1"]}"`
   );
 };
 

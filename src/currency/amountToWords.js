@@ -7,6 +7,11 @@ import {
   CONJUNCTION,
   VALID_FORMAT
 } from "./constants";
+
+/**
+ * Convert currency amount in to words
+ * @param {number} amount
+ */
 export const amountToWords = amount => {
   if (isNaN(amount)) {
     throw new Error("Parameter is not a number!");

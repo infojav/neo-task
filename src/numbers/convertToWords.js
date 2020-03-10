@@ -5,6 +5,10 @@ import {
   MAX_VALUE
 } from "./constants";
 
+/**
+ * Convert a natural number in to words
+ * @param {number} number
+ */
 export function naturalToWords(number) {
   // Check is not a fraccion.
   if (isNaN(number)) {
@@ -39,6 +43,10 @@ export function naturalToWords(number) {
   );
 }
 
+/**
+ * Convert an integer number into words.
+ * @param {number} number
+ */
 export function integerToWords(number) {
   if (number <= -1) {
     return INTEGER_PREFIX.negativeValue + " " + naturalToWords(-1 * number);
